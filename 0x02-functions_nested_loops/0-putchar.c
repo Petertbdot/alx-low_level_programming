@@ -2,10 +2,13 @@
 
 /**
  * main - print _putchar and a new line
- * Return: Always 0
+ *
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
+
 	_putchar ('-');
 	_putchar ('p');
 	_putchar ('u');
