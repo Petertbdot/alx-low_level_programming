@@ -1,59 +1,49 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
-* numLength - returns the length of string
-* @num: operand number
-* Return: number of digits
-*/
-
-int numLength(int num)
-{
-	int length = 0;
-
-	if (!num)
-	{
-		return (1);
-	}
-	while (num)
-	{
-		num = num / 10;
-		lenghth += 1;
-	}
-	return (length);
-}
-/**
- * main - prints the first 98 Fibonaci sequence
- * Return: 0
+ * print_times_table - prints n times table, starting with 0
+ * @n: number of times table
  */
-int main(void)
+void print_times_table(int n)
 {
-	unsigned long f1 = 1, f2 = 2, tmp, mx = 100000000, f10 = 0, f20 = 0 tmpo = 0;
-	short int i = 1, initial0s;
+	int i, j, k;
 
-	while (i <= 98)
+	if (n >= 0 && n <= 15)
 	{
-		if (f10 > 0)
-			printf("%lu", f10);
-		initial0s = numLength(mx) - 1 - numLength(f1);
-		while (f10 > 0 && initial0s > 0)
+		for (i = 0; i <= n; i++)
 		{
-			printf("%i", 0);
-			initial0s--;
-		}
-			printf("%lu", f1);
+			for (j = 0; j <= n; j++)
+			{
+				k = j * i;
+				if (j == 0)
+				{
 
-			tmp = (f1 + f2) % mx;
-			tmpo = (f10 + f20 + (f1 + f2) / mx;
-			f1 = f2;
-			f10 = f20;
-			f2 = tmp;
-			f20 = tmpo;
+					_putchar(k + '0');
 
-			if (i != 98)
-				printf(",");
-			else
-				printf("\n");
-			i++;
+				} else if (k < 10 && j != 0)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(k + '0');
+				} else if (k >= 10 && k < 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar((k / 10) + '0');
+					_putchar((k % 10) + '0');
+				} else if (k >= 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar((k / 100) + '0');
+					_putchar(((k / 10) % 10) + '0');
+					_putchar((k % 10) + '0');
+				}
+			}
+			_putchar('\n');
 		}
-		return (0);
 	}
+}
