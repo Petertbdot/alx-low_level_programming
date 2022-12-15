@@ -1,9 +1,7 @@
-Task 10
 #include "main.h"
 
 /**
  * print_triangle - entry point
- * Triangles
  * Description: Prints diagonals
  *@size: size of the triangle
  * Return: void
